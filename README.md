@@ -2,8 +2,8 @@
 Python-like List for Lua, make your Lua code Pythonic
 
 #### List Features
-* ```lst = List(1,2,3,4)```       -- simple class initialization
-* ```print(lst) --> [1,2,3,4]```    -- prints itself with default print
+* ```lst = List(1,2,3,4)```       \-- simple class initialization
+* ```print(lst) --> [1,2,3,4]```  \-- prints itself with default print
 * ```lst[0] --> 1```                -- zero indexed list
 * ```lst[-2] --> 3```               -- supports negative int
 * ```lst:slice(nil,nil,-1) --> [4,3,2,1]```  -- supports slicing from python
