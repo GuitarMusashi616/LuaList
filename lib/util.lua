@@ -1,6 +1,7 @@
+local t = require "lib/tbl"
 local util = {}
 
-function util.all(tbl) 
+function util.all(tbl)
   local prev_k = nil
   return function()
     local k,v = next(tbl, prev_k)
@@ -21,7 +22,11 @@ function util.assertRaises(exception, callable, ...)
 end
 
 util.aliases = {
-  notnil=function(a) return a~=nil end,
+  ["notnil"]=function(a) return a~=nil end,
+  ["number?"]=function(a) return a==nil or type(a)=="number" end,
+  ["function?"]=function(a) return a==nil or type(a)=="function" end,
+  ["bool?"]=function(a) return a==nil or type(a)=="bool" end,
+  ["string?"]=function(a) return a==nil or type(a)=="string" end,
 }
 
 function util.is_of_type(var, typ)
@@ -48,7 +53,7 @@ function util.args(...)
     local var = tArgs[i]
     local typ = tArgs[i+1]
     
-    assert(util.is_of_type(var, typ), tostring(var) .. " not of type " .. tostring(typ))
+    assert(util.is_of_type(var, typ), "var with incorrect type passed to function")
   end
 end
 
@@ -72,4 +77,42 @@ function util.izip(tbl, oth)
   end
 end
 
+function util.range(start, stop, inc)
+  assert(type(start)=="number", "range() expected one number argument")
+  inc = inc or 1
+  if not stop then
+    stop = start
+    start = 0
+  end
+  stop = inc > 0 and stop - 1 or stop + 1
+  return coroutine.wrap(function()
+    for i=start,stop,inc do
+      coroutine.yield(i)
+    end
+  end)
+end
+
+function util.println(str,...)
+  local i = 0
+  local args = {...}
+  str = str:gsub("{}", function() i = i + 1 return t.str(args[i]) end)
+  print(str)
+end
+
+function util.print(...)
+  local values = {...}
+  local i = 0
+  for k,v in pairs(values) do
+    i = i + 1
+    io.write(t.str(v))
+    if i < #values then
+      io.write("\t")
+    end
+  end
+  io.write("\n")
+end
+
+--util.println("{} and a {} or a {} like a {}", 5, "str", function()end, {1,2,3,key=5,count=2})
+
+--util.print("hello", "stuff", 5, {1,2,3,4}, function()end, {{innie=5,1,4,6},st=function(a,b)return a+b end,2,5,key=print})
 return util
