@@ -24,6 +24,10 @@ function Point:__tostring()
   return "("..tostring(self.x)..", "..tostring(self.y)..", "..tostring(self.z)..")"
 end
 
+Point:get_xyz() 
+  return self.x, self.y, self.z 
+end
+
 
 local Edge = class()
 
@@ -57,17 +61,16 @@ function main()
   local points = List(range(4)):map(function() return Point(math.random(-8,8), math.random(-8,8), math.random(-8,8)) end)
   print(points) --> [(-8, 1, -5), (5, 1, 0), (-3, 7, 5), (4, -6, 6)]
   
-	local N = #points
-  local distances = List:zeroes(4, 4)  --> before [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-  println("before {}", distances)
+  local N = #points
+  local distances = List:zeroes(4, 4)
+  println("before {}", distances) --> before [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
   for i, p1 in points(true) do
     for j, p2 in points(true) do
       distances[i][j] = p1-p2
     end
   end
   
-  println("after {}", distances)  --> after [[-1, 18, 21, 30], [18, -1, 19, 14], [21, 19, -1, 21], [30, 14, 21, -1]]
-  print(distances*2+distances)
+  println("after {}", distances) --> after [[-1, 18, 21, 30], [18, -1, 19, 14], [21, 19, -1, 21], [30, 14, 21, -1]]
 end
 
 main()
