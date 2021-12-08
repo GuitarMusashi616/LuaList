@@ -23,7 +23,7 @@ assignment, pop, append, and insert supported
 ```:filter(function(n) n>1 end)```  
 ```:map(function(n) return List(n) end)```  
 ```--> [[2],[3],[4]]```  
-supports find, filter, map,reduce
+supports find, filter, map, reduce
 * ```lst:contains(3) --> true```  
 easily see if a list contains a value
 
@@ -53,7 +53,7 @@ optionally declare constructor (see below)
 *  ```local pt = Point(5,1,6)```  
 create instance of class
 * ```pt:get_xyz() --> 5,1,6```  
-define/call methods with : operator
+define/call methods with : operator (see below)
 
 
 #### Full Example
