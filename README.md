@@ -21,7 +21,7 @@ Python-like List for Lua, make your Lua code Pythonic
 * ```for i in range(4) do print(i) end --> 0,1,2,3```  -- util.range works like range from python
 * ```for v in all{5,6,7,key=val} do print(v) end  --> 5,6,7,val``` -- util.all returns just val from table
 * ```assertEqual(5,5), assertRaises("error", assert, false)``` -- util comes with test functions
-* ```args(num, "number", str, "string", b, "bool?", List(), List)```  -- will error if num not number, str not string, b not true false or nil, or List not type List
+* ```args(num, "number", str, "string", b, "bool?", List(), List)```  -- will error if num not number, str not string, b not bool or nil, or List not type List
 * ```for a,b in zip({"A","B","C"}, {1,2,3}) print(a,b) end``` --> A1 A2 A3  -- util.izip version returns 1,A,1,1; 2,A,2,2 etc
 
 
