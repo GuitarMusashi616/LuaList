@@ -44,7 +44,7 @@ util.izip version returns 1,A,1,1; 2,A,2,2 etc
 * ```assertEqual(5,5), assertRaises("error", assert, false)```  
 util comes with test functions
 * ```args(num, "number", str, "string", b, "bool?", List(), List)```  
-will error if num not number, str not string, b not bool or nil, or List not type List
+will error if num not number, str not string, b not bool or nil, or List() not of type List
 
 
 #### OOP Features
