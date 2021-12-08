@@ -15,6 +15,8 @@ supports negative int
 supports slicing from python
 * ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]```  
 supports add and multiply
+* ```for num in lst() do print(num) end --> 1,2,3,4```
+iterate through list python-style
 * ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  
 List constructor can take iterator (range from util.range)
 * ```lst[-1]=5, lst:pop(0), lst:append(2)```  
