@@ -1,6 +1,6 @@
 # LuaList
-Python-like List for Lua, make your Lua code Pythonic
-*see below and test/test_list for more examples
+Python-like List for Lua, make your Lua code Pythonic  
+*see below and test/test_list for more examples*
 
 #### List Features
 * ```lst = List(1,2,3,4)```  
