@@ -3,17 +3,27 @@ Python-like List for Lua, make your Lua code Pythonic
 
 #### List Features
 * ```lst = List(1,2,3,4)```  
--- simple class initialization
+simple class initialization
 * ```print(lst) --> [1,2,3,4]```  
 prints itself with default print
-* ```lst[0] --> 1```                -- zero indexed list
-* ```lst[-2] --> 3```               -- supports negative int
-* ```lst:slice(nil,nil,-1) --> [4,3,2,1]```  -- supports slicing from python
+* ```lst[0] --> 1```  
+zero indexed list
+* ```lst[-2] --> 3```  
+supports negative int
+* ```lst:slice(nil,nil,-1) --> [4,3,2,1]```  
+supports slicing from python
+* ```lst
+:filter(function(n) n>1 end)
+:map(function(n) return List(n) end)  
+--> [[2],[3],[4]]```
+supports find, filter, map,reduce
 * ```lst:contains(3) --> true```
-* ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]``` -- support + and *
-* ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  -- List constructor can take iterator (range from util.range)
-* ```lst[-1]=5, lst:pop(0), lst:append(2)```       -- assignment, pop, append, and insert supported
-* ```lst:map(function(n) return List(n) end) --> [[1],[2],[3],[4]]``` -- supports find, filter, map,reduce
+* ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]```  
+support + and *
+* ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  
+List constructor can take iterator (range from util.range)
+* ```lst[-1]=5, lst:pop(0), lst:append(2)```  
+assignment, pop, append, and insert supported
 * see below and test/test_list for more examples
 
 
