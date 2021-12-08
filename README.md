@@ -5,7 +5,7 @@ See **below** and **test/test_list** for more usage examples
 #### List Features
 * ```lst = List(1,2,3,4)```  
 simple class initialization
-* ```print(lst)  -->  [1,2,3,4]```  
+* ```print(lst) --> [1,2,3,4]```  
 prints itself with default print
 * ```lst[0] --> 1```  
 zero indexed list
@@ -13,6 +13,12 @@ zero indexed list
 supports negative int
 * ```lst:slice(nil,nil,-1) --> [4,3,2,1]```  
 supports slicing from python
+* ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]```  
+supports add and multiply
+* ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  
+List constructor can take iterator (range from util.range)
+* ```lst[-1]=5, lst:pop(0), lst:append(2)```  
+assignment, pop, append, and insert supported
 * ```lst```  
 ```:filter(function(n) n>1 end)```  
 ```:map(function(n) return List(n) end)```  
@@ -20,12 +26,6 @@ supports slicing from python
 supports find, filter, map,reduce
 * ```lst:contains(3) --> true```  
 easily see if a list contains a value
-* ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]```  
-supports add and multiply
-* ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  
-List constructor can take iterator (range from util.range)
-* ```lst[-1]=5, lst:pop(0), lst:append(2)```  
-assignment, pop, append, and insert supported
 
 
 #### Util Features
