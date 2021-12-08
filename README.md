@@ -5,7 +5,7 @@ See **below** and **test/test_list** for more usage examples
 #### List Features
 * ```lst = List(1,2,3,4)```  
 simple class initialization
-* ```print(lst) --> [1,2,3,4]```  
+* ```print(lst)  -->  [1,2,3,4]```  
 prints itself with default print
 * ```lst[0] --> 1```  
 zero indexed list
