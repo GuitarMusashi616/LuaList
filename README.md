@@ -12,10 +12,10 @@ zero indexed list
 supports negative int
 * ```lst:slice(nil,nil,-1) --> [4,3,2,1]```  
 supports slicing from python
-* ```lst  
-:filter(function(n) n>1 end)  
-:map(function(n) return List(n) end)  
---> [[2],[3],[4]]```  
+* ```lst```  
+```:filter(function(n) n>1 end)```  
+```:map(function(n) return List(n) end)```  
+```--> [[2],[3],[4]]```  
 supports find, filter, map,reduce
 * ```lst:contains(3) --> true```
 * ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]```  
