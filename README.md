@@ -1,5 +1,6 @@
 # LuaList
 Python-like List for Lua, make your Lua code Pythonic
+*see below and test/test_list for more examples
 
 #### List Features
 * ```lst = List(1,2,3,4)```  
@@ -17,14 +18,14 @@ supports slicing from python
 ```:map(function(n) return List(n) end)```  
 ```--> [[2],[3],[4]]```  
 supports find, filter, map,reduce
-* ```lst:contains(3) --> true```
+* ```lst:contains(3) --> true```  
+easily see if a list contains a value
 * ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]```  
 supports add and multiply
 * ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  
 List constructor can take iterator (range from util.range)
 * ```lst[-1]=5, lst:pop(0), lst:append(2)```  
 assignment, pop, append, and insert supported
-* see below and test/test_list for more examples
 
 
 #### Util Features
@@ -53,6 +54,7 @@ optionally declare constructor (see below)
 create instance of class
 * ```pt:get_xyz() --> 5,1,6```  
 define/call methods with : operator
+
 
 #### Full Example
 ~~~
