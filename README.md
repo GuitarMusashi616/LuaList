@@ -58,7 +58,7 @@ function Point:__tostring()
 end
 
 Point:get_xyz() 
-	return self.x, self.y, self.z 
+  return self.x, self.y, self.z 
 end
 
 
@@ -94,7 +94,7 @@ function main()
   local points = List(range(4)):map(function() return Point(math.random(-8,8), math.random(-8,8), math.random(-8,8)) end)
   print(points) --> [(-8, 1, -5), (5, 1, 0), (-3, 7, 5), (4, -6, 6)]
   
-	local N = #points
+  local N = #points
   local distances = List:zeroes(4, 4)  --> before [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
   println("before {}", distances)
   for i, p1 in points(true) do
