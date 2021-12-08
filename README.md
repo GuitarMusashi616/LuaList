@@ -1,10 +1,10 @@
 # LuaList
 Python-like List for Lua, make your Lua code Pythonic
 
-####List Features:
-* lst = List(1,2,3,4)        -- simple class initialization
-* print(lst) --> [1,2,3,4]    -- prints itself with default print
-* lst[0] --> 1                -- zero indexed list
+#### List Features:
+* ```lst = List(1,2,3,4)```       -- simple class initialization
+* ```print(lst) --> [1,2,3,4]```    -- prints itself with default print
+* ```lst[0] --> 1```                -- zero indexed list
 * lst[-2] --> 3               -- supports negative int
 * lst:slice(nil,nil,-1) --> [4,3,2,1]  -- supports slicing from python
 * lst:filter(function(n) n>1):map(function(n) return List(n) end) --> [[2],[3],[4]] -- supports find, filter, map, reduce
@@ -15,7 +15,7 @@ Python-like List for Lua, make your Lua code Pythonic
 * see below and test/test_list for more examples
 
 
-####Util Features:
+#### Util Features:
 * print({3,2,1,key=5}, List("stuff")])  --> {3, 2, 1, key=5} [stuff]  -- util.print will print default tables as well as custom classes
 * println("{}+{}={}", 5, 3, 8) --> 5+3=8   -- util.println supports simple print formatting
 * for i in range(4) do print(i) end --> 0,1,2,3  -- util.range works like range from python
@@ -25,7 +25,7 @@ Python-like List for Lua, make your Lua code Pythonic
 * for a,b in zip({"A","B","C"}, {1,2,3}) print(a,b) end --> A1 A2 A3  -- util.izip version returns 1,A,1,1; 2,A,2,2 etc
 
 
-####OOP Features
+#### OOP Features
 * declare new class by using local Point = class()
 * optionally declare instance methods by defining Point:__init(x,y,z) (see below)
 * instantiate class by using local pt = Point(5,1,6)
