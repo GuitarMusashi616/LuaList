@@ -1,13 +1,17 @@
 # LuaList
 Python-like List for Lua, make your Lua code Pythonic
 
-#### List Features:
+#### List Features
 * ```lst = List(1,2,3,4)```       -- simple class initialization
 * ```print(lst) --> [1,2,3,4]```    -- prints itself with default print
 * ```lst[0] --> 1```                -- zero indexed list
 * ```lst[-2] --> 3```               -- supports negative int
 * ```lst:slice(nil,nil,-1) --> [4,3,2,1]```  -- supports slicing from python
-* ```lst:filter(function(n) n>1):map(function(n) return List(n) end) --> [[2],[3],[4]]``` -- supports find, filter, map, reduce
+```
+* lst:filter(function(n) n>1)
+* 	:map(function(n) return List(n) end) 
+* --> [[2],[3],[4]] -- supports find, filter, map, reduce
+```
 * ```lst:contains(3) --> true```
 * ```lst*2+lst  --> [1,2,3,4,1,2,3,4,1,2,3,4]``` -- support + and *
 * ```List(range(10)) --> [0,1,2,3,4,5,6,7,8,9]```  -- List constructor can take iterator (range from util.range)
@@ -15,7 +19,7 @@ Python-like List for Lua, make your Lua code Pythonic
 * see below and test/test_list for more examples
 
 
-#### Util Features:
+#### Util Features
 * ```print({3,2,1,key=5}, List("stuff")])  --> {3, 2, 1, key=5} [stuff]```  -- util.print will print default tables as well as custom classes
 * ```println("{}+{}={}", 5, 3, 8) --> 5+3=8```   -- util.println supports simple print formatting
 * ```for i in range(4) do print(i) end --> 0,1,2,3```  -- util.range works like range from python
