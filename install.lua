@@ -30,4 +30,4 @@ if tArgs[1] == "uninstall" then
   error("Uninstall Successful")
 end
 
-wgetDirWithLua("lib", "raw.githubusercontent.com/GuitarMusashi616/LuaList/main/", {"list", "tbl", "util", "class"})
+wgetDirWithLua("lib", "https://raw.githubusercontent.com/GuitarMusashi616/LuaList/main/lib", {"list", "tbl", "util", "class"})
