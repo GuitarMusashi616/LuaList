@@ -16,7 +16,7 @@ end
 local function wgetDirWithLua(dirName, repo, fileNames)
   shell.run("mkdir "..tostring(dirName))
   shell.run("cd "..tostring(dirName))
-  wgetLua(repo, filenames)
+  wgetLua(repo, fileNames)
   shell.run("cd ..")
 end
 
